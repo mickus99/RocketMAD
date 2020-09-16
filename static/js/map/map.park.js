@@ -54,9 +54,11 @@ function updateNestParks() {
     }
 }
 
+var nestData;
+
 function getNestData(pokemonNestData) {
     
-    mapData.pokemoneNests = pokemonNestData;
+    nestData = pokemonNestData;
     //updatePokemonNests()
         
     return true
@@ -64,7 +66,7 @@ function getNestData(pokemonNestData) {
 
 function updatePokemonNests() {
     
-    console.log(mapData.pokemonNestData);
+    console.log(nestData);
     
     var i;
     var iconSize = 32 * (settings.pokemonIconSizeModifier / 100) ;
