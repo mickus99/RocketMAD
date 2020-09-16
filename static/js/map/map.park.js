@@ -55,19 +55,16 @@ function updateNestParks() {
 }
 
 function getNestData(pokemonNestData) {
-    if (!settings.showPokemonNests) {
-        return false
-    }
-    else {
-        console.log(pokemonNestData)
-        updatePokemonNests(pokemonNestData)
+    
+    mapData.pokemoneNests = pokemonNestData;
+    //updatePokemonNests()
         
-    }
-
     return true
 }
 
-function updatePokemonNests(data) {
+function updatePokemonNests() {
+    
+    console.log(mapData.pokemonNestData);
     
     var i;
     var iconSize = 32 * (settings.pokemonIconSizeModifier / 100) ;
