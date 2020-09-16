@@ -14,10 +14,6 @@ function getAllParks() {
             console.error("Couldn't load nest parks JSON file.")
         })
     }
-    
-    if (serverSettings.pokemonNests) {
-        updatePokemonNests();  
-    }
 
     if (serverSettings.exParks) {
         $.getJSON('static/data/parks/' + serverSettings.exParksFileName + '.json').done(function (response) {
@@ -165,4 +161,5 @@ function updateExParks() {
 function updateAllParks() {
     updateNestParks()
     updateExParks()
+    updarePokemonNests()
 }
