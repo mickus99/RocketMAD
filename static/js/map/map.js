@@ -155,7 +155,6 @@ var lastpokestops
 var lastspawns
 var lastscannedlocs
 var lastweather
-var lastpokemonnests
 
 var map
 var markers
@@ -1210,7 +1209,6 @@ function initSettingsSidebar() {
         $('#pokemon-nests-park-switch').on('change', function () {
             settings.showPokemonNests = this.checked
             if (this.checked) {
-                lastpokemonnests = false
                 updatePokemonNests()
             } else {
                 pokemonNestsLayerGroup.clearLayers()
@@ -3253,7 +3251,6 @@ function loadRawData() {
             'lastweather': lastweather,
             'lastspawns': lastspawns,
             'lastscannedlocs': lastscannedlocs,
-            'lastpokemonnests': lastpokemonnests,
             'pokemonNests': loadPokemonNests
         },
         dataType: 'json',
@@ -3296,12 +3293,7 @@ function updateMap() {
             processScannedLocation(scannedLoc)
         })
         
-        var j=1;
-        
-        if (j=1){
-            getNestData(result.pokemonNests)
-            j++;
-        }
+        getNestData(result.pokemonNests)
         
         updateStatsTable()
 
@@ -3316,7 +3308,6 @@ function updateMap() {
         lastspawns = result.lastspawns
         lastscannedlocs = result.lastscannedlocs
         lastweather = result.lastweather
-        lastpokemonnests = result.lastpokemonnests
 
         if (result.reids instanceof Array) {
             reincludedPokemon = difference(reincludedPokemon, new Set(result.reids))
