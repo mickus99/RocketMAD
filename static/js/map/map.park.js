@@ -56,13 +56,6 @@ function updateNestParks() {
 
 var nestData;
 
-function getNestData(pokemonNestData) {
-    
-    nestData = pokemonNestData;
-    //updatePokemonNests()
-        
-    return true
-}
 
 function updatePokemonNests() {
     
@@ -120,6 +113,17 @@ function updatePokemonNests() {
         }
     }
     
+}
+
+function getNestData(pokemonNestData) {
+    
+    nestData = pokemonNestData;
+    //updatePokemonNests()
+    if (Store.get('showPokemonNests') == True) {
+        updatePokemonNests();
+    }
+        
+    return true
 }
 
 function timeConverter(UNIX_timestamp){
