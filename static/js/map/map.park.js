@@ -161,5 +161,5 @@ function updateExParks() {
 function updateAllParks() {
     updateNestParks()
     updateExParks()
-    updarePokemonNests()
+    updatePokemonNests()
 }
