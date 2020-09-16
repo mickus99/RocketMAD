@@ -74,18 +74,18 @@ function updatePokemonNests() {
     
     pokemonNestsLayerGroup.clearLayers()
     
-    data.forEach(function (index, arr) {
+    for (i=0; i<=data.length; i++){
 
         var myIcon = L.icon({
             //iconUrl: 'pkm_img?pkm='+data[i].pokemon_id,
             shadowUrl: 'https://i.imgur.com/46zb5y8.png',
-            iconUrl: 'pkm_img?pkm='+data[index].pokemon_id,
+            iconUrl: 'pkm_img?pkm='+data[i].pokemon_id,
             shadowSize: [iconSize, iconSize],
             iconSize: [smallIcon, smallIcon], // size of the shadow
         });
-        var inarea = map.getBounds().contains([data[index].lat,data[index].lon]);
+        var inarea = map.getBounds().contains([data[i].lat,data[i].lon]);
         
-        var lastUpdated = timeConverter(data[index].updated);
+        var lastUpdated = timeConverter(data[i].updated);
         
         var popup = L.popup({ autoClose: false })
             .setContent(`
@@ -96,17 +96,17 @@ function updatePokemonNests() {
                                 <strong>` + data[i].pokemonName + `</strong>
                               </div>
                               <div id='pokemon-image'>
-                                <img src='pkm_img?pkm=`+data[index].pokemon_id+`' width='64'>
+                                <img src='pkm_img?pkm=`+data[i].pokemon_id+`' width='64'>
                               </div>
                             </div>
                             <div id='pokemon-container-right'>
-                              <div class="parkname"><span style="text-decoration: underline;"><strong>`+data[index].name+`</strong></span></div>
+                              <div class="parkname"><span style="text-decoration: underline;"><strong>`+data[i].name+`</strong></span></div>
                               <div class='street'>
-                                <br><strong>Street :</strong> `+ data[index].street +` <br>
-                                <strong>Suburb :</strong> `+ data[index].suburb +`<br>
+                                <br><strong>Street :</strong> `+ data[i].street +` <br>
+                                <strong>Suburb :</strong> `+ data[i].suburb +`<br>
                               </div>
                               <div class='average'>
-                                <br><strong>Average Per Hour :</strong> `+ data[index].pokemon_avg +`
+                                <br><strong>Average Per Hour :</strong> `+ data[i].pokemon_avg +`
                               </div>
                               <div class='lastupdated'>
                                 <br><strong>Last Updated :</strong> `+ lastUpdated +`
@@ -116,9 +116,9 @@ function updatePokemonNests() {
                         </div>`)
             
         if (inarea = true) {
-            L.marker([data[index].lat, data[index].lon], {icon: myIcon}).bindPopup(popup).openPopup().addTo(pokemonNestsLayerGroup);
+            L.marker([data[i].lat, data[i].lon], {icon: myIcon}).bindPopup(popup).openPopup().addTo(pokemonNestsLayerGroup);
         }
-    })
+    }
     
 }
 
