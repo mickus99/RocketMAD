@@ -66,7 +66,7 @@ function getNestData(pokemonNestData) {
 
 function updatePokemonNests() {
     
-    data = nestData;
+    var data = nestData;
     
     var i;
     var iconSize = 32 * (settings.pokemonIconSizeModifier / 100) ;
