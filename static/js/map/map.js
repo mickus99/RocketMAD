@@ -3253,6 +3253,7 @@ function loadRawData() {
             'lastweather': lastweather,
             'lastspawns': lastspawns,
             'lastscannedlocs': lastscannedlocs,
+            'lastpokemonnests': lastpokemonnests,
             'pokemonNests': loadPokemonNests
         },
         dataType: 'json',
@@ -3315,6 +3316,7 @@ function updateMap() {
         lastspawns = result.lastspawns
         lastscannedlocs = result.lastscannedlocs
         lastweather = result.lastweather
+        lastpokemonnests = result.lastpokemonnests
 
         if (result.reids instanceof Array) {
             reincludedPokemon = difference(reincludedPokemon, new Set(result.reids))
