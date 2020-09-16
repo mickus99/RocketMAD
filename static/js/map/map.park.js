@@ -16,7 +16,7 @@ function getAllParks() {
     }
     
     if (serverSettings.pokemonNests) {
-        console.log();   
+        console.log('need something here');   
     }
 
     if (serverSettings.exParks) {
