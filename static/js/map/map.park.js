@@ -118,7 +118,7 @@ function updatePokemonNests() {
         if (inarea = true) {
             L.marker([data[i].lat, data[i].lon], {icon: myIcon}).bindPopup(popup).openPopup().addTo(pokemonNestsLayerGroup);
         }
-    })
+    }
     
 }
 
