@@ -60,7 +60,7 @@ function getNestData(pokemonNestData) {
     }
     else {
     
-        //updatePokemonNests(pokemonNestData)
+        updatePokemonNests(pokemonNestData)
         
     }
 
