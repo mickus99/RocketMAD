@@ -73,7 +73,7 @@ function updatePokemonNests() {
     
     pokemonNestsLayerGroup.clearLayers()
     
-    data.forEach(index){
+    data.forEach(function (index){
 
         var myIcon = L.icon({
             //iconUrl: 'pkm_img?pkm='+data[i].pokemon_id,
@@ -117,7 +117,7 @@ function updatePokemonNests() {
         if (inarea = true) {
             L.marker([data[index].lat, data[index].lon], {icon: myIcon}).bindPopup(popup).openPopup().addTo(pokemonNestsLayerGroup);
         }
-    }
+    })
     
 }
 
