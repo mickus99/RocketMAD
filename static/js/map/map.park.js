@@ -59,7 +59,7 @@ function getNestData(pokemonNestData) {
         return false
     }
     else {
-    
+        console.log(pokemonNestData)
         updatePokemonNests(pokemonNestData)
         
     }
