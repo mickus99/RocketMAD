@@ -55,8 +55,9 @@ var nestData;
 function getNestData(pokemonNestData) {
     
     nestData = pokemonNestData;
-    //updatePokemonNests()
-        
+    if (settings.showPokemonNests) {
+        updatePokemonNests()
+    }
     return true
 }
 
